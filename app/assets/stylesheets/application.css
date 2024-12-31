@@ -48,4 +48,11 @@ table.movie-table tr:hover {
 table.movie-table td {
     color: #555;
 }
-  
+
+.sort-asc {
+    background-color: lightgreen; /* Color for ascending */
+}
+
+.sort-desc {
+    background-color: rgb(210, 51, 51); /* Color for descending */
+}
