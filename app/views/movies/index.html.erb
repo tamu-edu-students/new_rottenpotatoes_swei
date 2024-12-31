@@ -20,8 +20,8 @@
         <td><%= movie.release_date %></td>
         <td>
           <%= link_to "Read", movie_path(movie) %> 
-          <%= link_to "Update", edit_movie_path(movie) %> |
-          <%= link_to "Delete", movie_path(movie), method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "Update", edit_movie_path(movie) %> 
+          <%= link_to "Delete", movie_path(movie), method: :delete%>
         </td>
       </tr>
     <% end %>
