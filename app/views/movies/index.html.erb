@@ -11,13 +11,15 @@
       <th>Rating</th>
       <th>Description</th>
       <th>Release Date</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
         <td><%= movie.title %></td>
-        <td><%= movie.genre %></td>
+        <td><%= movie.rating %></td>
+        <td><%= movie.description %></td>
         <td><%= movie.release_date %></td>
         <td>
           <%= link_to "Show", movie_path(movie) %> |
@@ -29,7 +31,7 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="4">
+      <td colspan="5">
         <%= link_to "New movie", new_movie_path %>
       </td>
     </tr>
