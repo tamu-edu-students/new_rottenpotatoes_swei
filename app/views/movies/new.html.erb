@@ -1,12 +1,11 @@
 <% content_for :title, "New movie" %>
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: white;">
-  <div style="border: 2px solid black; padding: 20px; width: 400px; text-align: center;">
-    <h1>New movie</h1>
+<div class="wrapper">
+  <div class="form-container">
+    <h1>New Movie</h1>
     <%= render "form", movie: @movie %>
-    <br>
-    <div>
-      <%= link_to "Back to movies", movies_path %>
-    </div>
+    <p>
+      <%= link_to "Back to Movies", movies_path %>
+    </p>
   </div>
 </div>
