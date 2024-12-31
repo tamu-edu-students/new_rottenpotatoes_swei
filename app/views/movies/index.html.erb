@@ -4,16 +4,12 @@
 
 <h1>Movies</h1>
 
-<head>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-</head>
-
-<table id="myTable" class="searchable sortable" border="1" style="width: 100%; text-align: left;">
+<table border="1" style="width: 100%; text-align: left;">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
+      <th><%= link_to "Title", movies_path(sort: "title", direction: params[:direction] == "asc" ? "desc" : "asc") %></th>
+      <th><%= link_to "Rating", movies_path(sort: "rating", direction: params[:direction] == "asc" ? "desc" : "asc") %></th>
+      <th><%= link_to "Release Date", movies_path(sort: "release_date", direction: params[:direction] == "asc" ? "desc" : "asc") %></th>    
     </tr>
   </thead>
   <tbody>
@@ -23,8 +19,8 @@
         <td><%= movie.rating %></td>
         <td><%= movie.release_date %></td>
         <td>
-          <%= link_to "Show", movie_path(movie) %> |
-          <%= link_to "Edit", edit_movie_path(movie) %> |
+          <%= link_to "Read", movie_path(movie) %> |
+          <%= link_to "Update", edit_movie_path(movie) %> |
           <%= link_to "Delete", movie_path(movie), method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
       </tr>
@@ -33,17 +29,8 @@
   <tfoot>
     <tr>
       <td colspan="5">
-        <%= link_to "New movie", new_movie_path %>
+        <%= link_to "Create", new_movie_path %>
       </td>
     </tr>
   </tfoot>
 </table>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    $('#myTable').DataTable(); // Apply DataTables to the table with id "myTable"
-  });
-</script>
