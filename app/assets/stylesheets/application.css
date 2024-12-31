@@ -42,11 +42,11 @@ table.movie-table tr:nth-child(even) {
 }
 
 table.movie-table tr:hover {
-    background-color: #ddd;
+    background-color: yellow;
 }
 
 table.movie-table td {
-    color: #555;
+    color: grey;
 }
 
 .sort-asc {
